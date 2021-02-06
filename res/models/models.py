@@ -8,6 +8,8 @@ def get_model(MODEL_ARCH, NUM_CLASSES):
     if MODEL_ARCH == 'CustomCNN':
         from models.CustomCNN import CustomCNN
         return CustomCNN(num_classes = NUM_CLASSES)
-    if MODEL_ARCH == '<your_model_file>':
-        ##### Add code to Load your model ####
-        pass
+    elif MODEL_ARCH == 'SimpleCNN':
+        from models.SimpleCNN import SimpleCNN
+        return SimpleCNN(num_classes = NUM_CLASSES)
+    else:
+        raise NotImplementedError
